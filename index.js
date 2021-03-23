@@ -31,9 +31,10 @@ const questions = [
     message: "usage?",
   },
   {
-    type: "input",
+    type: "list",
     name: "license",
     message: "license?",
+    choices: ["MIT", "GNU GPL v2", "GNU GPL v3", "Apache 2.0", "Unlicense"],
   },
   {
     type: "input",
@@ -47,8 +48,13 @@ const questions = [
   },
   {
     type: "input",
-    name: "questions",
-    message: "questions?",
+    name: "username",
+    message: "github username?",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "email?",
   },
 ];
 
