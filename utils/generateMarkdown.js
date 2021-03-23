@@ -67,7 +67,28 @@ const renderLicenseSection = (license) => {
   return `${renderLicenseBadge(license) + renderLicenseLink(license)}`;
 };
 
-renderLicenseSection("Apache 2.0");
+const tableOfContents = (contribute) => {
+  return contribute === "None"
+    ? `- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Tests](#tests)
+- [Questions](#questions)`
+    : `- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contribute](#contribute)
+- [Tests](#tests)
+- [Questions](#questions)`;
+};
+
+const contribution = (contribute) => {
+  return contribute === "None"
+    ? `## Contribute
+
+${contribute}`
+    : ``;
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -92,12 +113,7 @@ ${description}
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contribute](#contribute)
-- [Tests](#tests)
-- [Questions](#questions)
+${tableOfContents(contribute)}
 
 ## Installation
 

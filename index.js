@@ -9,52 +9,77 @@ const questions = [
     type: "input",
     name: "title",
     message: "What is the title of your project?",
-  },
-  {
-    type: "input",
-    name: "tableOfContents",
-    message: "Contents?",
+    validate: (title) => {
+      return title ? true : console.log("‼️ Please provide a project title.");
+    },
   },
   {
     type: "input",
     name: "description",
-    message: "Description?",
+    message: "Please provide a brief description of your project.",
+    validate: (description) => {
+      return description
+        ? true
+        : console.log("‼️ Please provide a brief project description.");
+    },
   },
   {
     type: "input",
     name: "install",
-    message: "Install?",
+    message: "Please provide project installation instructions.",
+    validate: (install) => {
+      return install
+        ? true
+        : console.log("‼️ Please provide project installation instructions.");
+    },
   },
   {
     type: "input",
     name: "usage",
-    message: "usage?",
+    message: "Please provide instructions/examples of use.",
+    validate: (usage) => {
+      return usage
+        ? true
+        : console.log("‼️ Please provide usage instructions.");
+    },
   },
   {
     type: "list",
     name: "license",
-    message: "license?",
+    message: "What license will your project be covered under?",
     choices: ["MIT", "GNU GPL v2", "GNU GPL v3", "Apache 2.0", "Unlicense"],
   },
   {
     type: "input",
     name: "contribute",
-    message: "contribute?",
+    message: `Are there other contributors? \n If so, seperate with a comma (ex. Bill, Ted, Sally). If none, continue (ENTER).`,
+    default: "None",
   },
   {
     type: "input",
     name: "tests",
     message: "tests?",
+    validate: (tests) => {
+      return tests ? true : console.log("‼️ Please provide a project title.");
+    },
   },
   {
     type: "input",
     name: "username",
-    message: "github username?",
+    message: "Please provide a GitHub username.",
+    validate: (username) => {
+      return username
+        ? true
+        : console.log("‼️ Please provide a GitHub username.");
+    },
   },
   {
     type: "input",
     name: "email",
-    message: "email?",
+    message: "Please provide an email for contacting.",
+    validate: (email) => {
+      return email ? true : console.log("‼️ Please provide an email.");
+    },
   },
 ];
 
