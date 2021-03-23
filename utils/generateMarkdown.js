@@ -1,15 +1,3 @@
-const checkLicense = (license) => {
-  return license === "MIT"
-    ? MIT
-    : license === "GNU GPL v2"
-    ? GPLv2
-    : license === "GNU GPL v3"
-    ? GPLv3
-    : license === "Apache 2.0"
-    ? Apache
-    : Unlicense;
-};
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
@@ -23,12 +11,11 @@ const renderLicenseBadge = (license) => {
       "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]",
     Apache:
       "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]",
-    Unlicense:
-      "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]",
+    None: "",
   };
 
   // destructuring the badges object
-  const { MIT, GPLv2, GPLv3, Apache, Unlicense } = badges;
+  const { MIT, GPLv2, GPLv3, Apache, Unlicense, None } = badges;
 
   // returning badge when license is equal to one of the badge objects
   return license === "MIT"
@@ -39,7 +26,7 @@ const renderLicenseBadge = (license) => {
     ? GPLv3
     : license === "Apache 2.0"
     ? Apache
-    : Unlicense;
+    : None;
 };
 
 // TODO: Create a function that returns the license link
@@ -51,11 +38,11 @@ const renderLicenseLink = (license) => {
     GPLv2: "(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)",
     GPLv3: "(https://www.gnu.org/licenses/gpl-3.0)",
     Apache: "(https://opensource.org/licenses/Apache-2.0)",
-    Unlicense: "(http://unlicense.org/)",
+    None: "",
   };
 
   // destructuring links object
-  const { MIT, GPLv2, GPLv3, Apache, Unlicense } = links;
+  const { MIT, GPLv2, GPLv3, Apache, Unlicense, None } = links;
 
   // returning badge when license is equal to one of the badge objects
   return license === "MIT"
@@ -66,34 +53,36 @@ const renderLicenseLink = (license) => {
     ? GPLv3
     : license === "Apache 2.0"
     ? Apache
-    : Unlicense;
+    : None;
 };
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 const renderLicenseSection = (license) => {
-  return `${renderLicenseBadge(license) + renderLicenseLink(license)}`;
+  return !renderLicenseBadge(license)
+    ? ``
+    : `## License
+
+This application is covered under the terms of the [${license}](LICENSE) license.`;
+  // return `${renderLicenseBadge(license) + renderLicenseLink(license)}`;
 };
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const {
     title,
-    // confirmTitle,
     description,
     install,
     license,
     contribute,
     tests,
     username,
-    // confirmUsername,
     email,
-    // confirmEmail,
   } = data;
   return `
 # ${title} 
 
-${renderLicenseSection(license)} 
+${renderLicenseBadge(license) + renderLicenseLink(license)} 
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/${username}/${title})
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/${username}/${title})
@@ -131,9 +120,8 @@ Created by: [${username}](https://github.com/${username})
 
 For any further information or questions please contact me at [${email}](mailto:${email})
 
-## License
 
-This application is covered under the terms of the [${license}](LICENSE) license.`;
+${renderLicenseSection(license)}`;
 }
 
 module.exports = generateMarkdown;
