@@ -82,7 +82,12 @@ function generateMarkdown(data) {
   return `
 # ${title} 
 
-${renderLicenseSection(license)}
+${renderLicenseSection(license)} 
+
+![GitHub last commit](https://img.shields.io/github/last-commit/${username}/${title})
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/${username}/${title})
+![GitHub commit activity](https://img.shields.io/github/languages/count/${username}/${title})
+![GitHub commit activity](https://img.shields.io/github/languages/top/${username}/${title})
 
 ## Description
 

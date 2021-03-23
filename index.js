@@ -8,7 +8,7 @@ const questions = [
   {
     type: "input",
     name: "title",
-    message: "What is the title of your project?",
+    message: "What is the title of your repository?",
     validate: (title) => {
       return title ? true : console.log("‼️ Please provide a project title.");
     },
