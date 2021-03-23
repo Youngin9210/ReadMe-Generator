@@ -67,29 +67,6 @@ const renderLicenseSection = (license) => {
   return `${renderLicenseBadge(license) + renderLicenseLink(license)}`;
 };
 
-const tableOfContents = (contribute) => {
-  return contribute === "None"
-    ? `- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Tests](#tests)
-- [Questions](#questions)`
-    : `- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contribute](#contribute)
-- [Tests](#tests)
-- [Questions](#questions)`;
-};
-
-const contribution = (contribute) => {
-  return contribute === "None"
-    ? `## Contribute
-
-${contribute}`
-    : ``;
-};
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const {
@@ -113,7 +90,12 @@ ${description}
 
 ## Table of Contents
 
-${tableOfContents(contribute)}
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribute](#contribute)
+- [Tests](#tests)
+- [Questions](#questions)
+- [License](#license)
 
 ## Installation
 
