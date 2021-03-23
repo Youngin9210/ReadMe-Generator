@@ -52,8 +52,9 @@ const questions = [
   {
     type: "input",
     name: "contribute",
-    message: `Are there other contributors? \n If so, seperate with a comma (ex. Bill, Ted, Sally). If none, continue (ENTER).`,
-    default: "None",
+    message: `Please provide contribution guidelines. Default is Contributor Covenant`,
+    default:
+      "Please refer to [Contributor Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) for contribution guidelines",
   },
   {
     type: "input",
