@@ -71,13 +71,16 @@ const renderLicenseSection = (license) => {
 function generateMarkdown(data) {
   const {
     title,
+    // confirmTitle,
     description,
     install,
     license,
     contribute,
     tests,
     username,
+    // confirmUsername,
     email,
+    // confirmEmail,
   } = data;
   return `
 # ${title} 
