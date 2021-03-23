@@ -13,6 +13,7 @@ const checkLicense = (license) => {
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
+  // object of license badges from shields.io
   const badges = {
     MIT:
       "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]",
@@ -25,8 +26,11 @@ const renderLicenseBadge = (license) => {
     Unlicense:
       "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]",
   };
+
+  // destructuring the badges object
   const { MIT, GPLv2, GPLv3, Apache, Unlicense } = badges;
 
+  // returning badge when license is equal to one of the badge objects
   return license === "MIT"
     ? MIT
     : license === "GNU GPL v2"
@@ -41,6 +45,7 @@ const renderLicenseBadge = (license) => {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 const renderLicenseLink = (license) => {
+  // object of links to use take to license page when clicked
   const links = {
     MIT: "(https://opensource.org/licenses/MIT)",
     GPLv2: "(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)",
@@ -48,8 +53,11 @@ const renderLicenseLink = (license) => {
     Apache: "(https://opensource.org/licenses/Apache-2.0)",
     Unlicense: "(http://unlicense.org/)",
   };
+
+  // destructuring links object
   const { MIT, GPLv2, GPLv3, Apache, Unlicense } = links;
 
+  // returning badge when license is equal to one of the badge objects
   return license === "MIT"
     ? MIT
     : license === "GNU GPL v2"
