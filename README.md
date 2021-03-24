@@ -1,34 +1,38 @@
-# asdf
+# ReadMe-Generator
+
+![GitHub last commit](https://img.shields.io/github/last-commit/Youngin9210/ReadMe-Generator)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Youngin9210/ReadMe-Generator)
+![GitHub commit activity](https://img.shields.io/github/languages/count/Youngin9210/ReadMe-Generator)
+![GitHub commit activity](https://img.shields.io/github/languages/top/Youngin9210/ReadMe-Generator)
 
 ## Description
 
-sdfh
+Using the command line, this app will prompt the user with questions about sections included in a readme.md file. When inputs are given, then a readme.md file is generated with contents from user input.
 
 ## Table of Contents
 
+- [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Contribute](#contribute)
 - [Tests](#tests)
 - [Questions](#questions)
+- [License](#license)
+
+## Screenshots
+
+![gif](assets/images/screenshot.png)
 
 ## Installation
 
-sdgh
-
-## License
-
-hdsff
+Using the terminal, clone the repository to your local device using SSH or HTTPS. Once cloned, open repository in a text editor to make changes.
 
 ## Contribute
 
-gasfgf
-
-## Tests
-
-asdf
+Please refer to [Contributor Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) for contribution guidelines
 
 ## Questions
 
-sadg
+Created by: [Youngin9210](https://github.com/Youngin9210)
+
+For any further information or questions please contact me at [kyleyoung.9210@gmail.com](mailto:kyleyoung.9210@gmail.com)

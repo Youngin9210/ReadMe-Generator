@@ -83,7 +83,7 @@ const questions = [
   {
     type: "input",
     name: "tests",
-    message: "tests?",
+    message: "Are there any tests for your application?",
     // validating that the input is true. If not, ask for input again.
     validate: (tests) => {
       // if true, then return true. Else, console.log a message
@@ -122,17 +122,21 @@ function writeToFile(fileName, data) {
   // Then passing through function
   inquirer.prompt(data).then((answers) => {
     // writing file with provided fileName and generateMarkdown exported from generateMarkdown.js
-    fs.writeFile(fileName, generateMarkdown(answers), (err) => {
-      if (err) throw err;
-      console.log("nice!!");
-    });
+    fs.writeFile(
+      `./fileTests/${fileName}`,
+      generateMarkdown(answers),
+      (err) => {
+        if (err) throw err;
+        console.log("Success! Your README.md file has been creaeted!");
+      }
+    );
   });
 }
 
 // a function to initialize app
 function init() {
   // writing file README.md and passing through the questions array
-  writeToFile("README.md", questions);
+  writeToFile("read.md", questions);
 }
 
 // Function call to initialize app
