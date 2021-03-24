@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
   // object of license badges from shields.io
@@ -29,7 +29,7 @@ const renderLicenseBadge = (license) => {
     : None;
 };
 
-// TODO: Create a function that returns the license link
+// a function that returns the license link
 // If there is no license, return an empty string
 const renderLicenseLink = (license) => {
   // object of links to use take to license page when clicked
@@ -56,19 +56,22 @@ const renderLicenseLink = (license) => {
     : None;
 };
 
-// TODO: Create a function that returns the license section of README
+// a function that returns the license section of README
 // If there is no license, return an empty string
 const renderLicenseSection = (license) => {
+  // if renderLicenseBadge is false,
   return !renderLicenseBadge(license)
-    ? ``
-    : `## License
+    ? // then return an empty string
+      ``
+    : // else, return license section
+      `## License
 
 This application is covered under the terms of the [${license}](LICENSE) license.`;
-  // return `${renderLicenseBadge(license) + renderLicenseLink(license)}`;
 };
 
-// TODO: Create a function to generate markdown for README
+// a function to generate markdown for README
 function generateMarkdown(data) {
+  // destructuring the data object that is being passed through
   const {
     title,
     description,
@@ -79,6 +82,8 @@ function generateMarkdown(data) {
     username,
     email,
   } = data;
+
+  // returning the markdown using template literals
   return `
 # ${title} 
 
@@ -124,4 +129,5 @@ For any further information or questions please contact me at [${email}](mailto:
 ${renderLicenseSection(license)}`;
 }
 
+// exporting generateMarkdown to be used in index.js
 module.exports = generateMarkdown;
