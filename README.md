@@ -15,13 +15,19 @@ Using the command line, this app will prompt the user with questions about secti
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contribute](#contribute)
-- [Tests](#tests)
 - [Questions](#questions)
 - [License](#license)
 
 ## Screenshots
 
-![gif](assets/images/screenshot.png)
+Node index.js with license list choices
+![image](assets/images/licenseList.png)
+
+Contribution default value set to Contributor Covenant
+![image](assets/images/contribution.png)
+
+After final prompt, console logs 'Success!'
+![image](assets/images/final.png)
 
 ## Installation
 
