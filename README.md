@@ -7,7 +7,7 @@
 
 ## Description
 
-Using the command line, this app will prompt the user with questions about sections included in a readme.md file. When inputs are given, then a readme.md file is generated with contents from user input.
+This app utilizes Javascript along with NodeJs, npm, and inquirer. Using the command line, this app will prompt the user with questions about sections included in a readme.md file. When inputs are given, then a readme.md file is generated with contents from user input.
 
 ## Table of Contents
 
