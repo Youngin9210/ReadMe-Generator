@@ -52,7 +52,7 @@ const questions = [
   {
     type: "input",
     name: "usage",
-    message: "Please provide instructions/examples of use.",
+    message: "Please provide examples of use.",
     // validating that the input is true. If not, ask for input again.
     validate: (usage) => {
       return usage
@@ -87,7 +87,7 @@ const questions = [
     // validating that the input is true. If not, ask for input again.
     validate: (tests) => {
       // if true, then return true. Else, console.log a message
-      return tests ? true : console.log("‼️ Please provide a project title.");
+      return tests ? true : console.log("‼️ Please provide any tests for your application.");
     },
   },
   // USERNAME
@@ -123,11 +123,13 @@ function writeToFile(fileName, data) {
   inquirer.prompt(data).then((answers) => {
     // writing file with provided fileName and generateMarkdown exported from generateMarkdown.js
     fs.writeFile(
+      // writing file to a designated folder to makes sure to not overwrite existing readme.md
       `./fileTests/${fileName}`,
       generateMarkdown(answers),
       (err) => {
         if (err) throw err;
-        console.log("Success! Your README.md file has been creaeted!");
+        // logging success when completed if successful
+        console.log("Success! Your README.md file has been created!");
       }
     );
   });
@@ -136,7 +138,7 @@ function writeToFile(fileName, data) {
 // a function to initialize app
 function init() {
   // writing file README.md and passing through the questions array
-  writeToFile("read.md", questions);
+  writeToFile("readme.md", questions);
 }
 
 // Function call to initialize app

@@ -76,6 +76,7 @@ function generateMarkdown(data) {
     title,
     description,
     install,
+    usage,
     license,
     contribute,
     tests,
@@ -110,6 +111,10 @@ ${description}
 ## Installation
 
 ${install}
+
+## Usage
+
+${usage}
 
 ## Contribute
 
