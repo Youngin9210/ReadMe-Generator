@@ -29,6 +29,10 @@ Contribution default value set to Contributor Covenant
 After final prompt, console logs 'Success!'
 ![image](assets/images/final.png)
 
+If you would like to see a video of how the ReadMe-Generator works then click the link below
+
+[How to video](https://drive.google.com/file/d/1OhqZOhF1Pzle2fmuVN8CeWE5IZiOcQEW/view)
+
 ## Installation
 
 Using the terminal, clone the repository to your local device using SSH or HTTPS. Once cloned, open repository in a text editor to make changes.
