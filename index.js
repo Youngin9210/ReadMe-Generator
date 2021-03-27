@@ -74,7 +74,7 @@ const questions = [
   {
     type: "input",
     name: "contribute",
-    message: `Please provide contribution guidelines. Default is Contributor Covenant`,
+    message: `Please provide contribution guidelines. Default is Contributor Covenant. Press ENTER to use default`,
     // setting default value of contribute
     default:
       "Please refer to [Contributor Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) for contribution guidelines",
@@ -87,7 +87,9 @@ const questions = [
     // validating that the input is true. If not, ask for input again.
     validate: (tests) => {
       // if true, then return true. Else, console.log a message
-      return tests ? true : console.log("‼️ Please provide any tests for your application.");
+      return tests
+        ? true
+        : console.log("‼️ Please provide any tests for your application.");
     },
   },
   // USERNAME
